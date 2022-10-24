@@ -11,7 +11,8 @@
                     <h5 class="card-title">{{post.title}}</h5>
                     <p class="card-text">{{post.description}}</p>
                     <p class="card-text">{{post.category?post.category.name:'-'}}</p>
-                    <a href="#" class="btn btn-primary">Details</a>
+                    <!-- <a href="#" class="btn btn-primary">Details</a> -->
+                    <router-link :to="{name: 'singlePostPage', params: {slug: post.slug}}" class="btn btn-primary">Details</router-link>
                 </div>
             </div>
         </div>
@@ -35,6 +36,7 @@ export default {
             .then((response)=>{
                 this.posts = response.data.results;
                 this.loading = false;
+                console.log(response);
             });
         }
     },

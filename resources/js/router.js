@@ -7,6 +7,7 @@ import homePage from './pages/homePage.vue';
 import contactPage from './pages/contactPage.vue';
 import infoPage from './pages/infoPage.vue';
 import postPage from './pages/postPage.vue';
+import singlePostPage from './pages/singlePostPage.vue';
 
 const router = new VueRouter({
     mode: "history",
@@ -30,6 +31,11 @@ const router = new VueRouter({
             path: '/info',
             name: 'info',
             component: infoPage
+        },
+        {
+            path: '/posts/:slug',
+            name: 'singlePostPage',
+            component: singlePostPage
         },
     ]
 });
